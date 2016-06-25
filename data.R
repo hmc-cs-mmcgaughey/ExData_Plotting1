@@ -17,5 +17,4 @@ names(data) <- names(getNames)
 rm(getNames)
 
 ## make dates into date objects, times into time objects
-data$Date <- as.Date(data$Date, format = "%d/%m/%Y")
-data$Time <- strptime(data$Time, format = "%H:%M:%S")
+data$datetime <- as.POSIXct(paste(data$Date,data$Time), format = "%d/%m/%Y %H:%M:%S")
